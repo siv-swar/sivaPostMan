@@ -1,0 +1,214 @@
+{
+	"id": "ef84df67-e010-475d-aee6-397f4496aa03",
+	"name": "Siva_PlyWrgt_Marathon",
+	"timestamp": "2025-11-21T19:27:33.799Z",
+	"collection_id": "50089993-adeb7b01-9eef-4881-a57d-ad31d14db101",
+	"folder_id": "50089993-b8f14e91-5c2c-4321-b5bb-e206cbd11f7a",
+	"environment_id": "0",
+	"totalPass": 7,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-11-21T19:27:26.036Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "bb8f4c74-6726-4339-8e64-3cfa3830b339",
+			"name": "mrthn_createSFToken",
+			"url": "https://login.salesforce.com/services/oauth2/token",
+			"time": 1980,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1980
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "1965e289-04d7-4575-89ba-05149b6f7357",
+			"name": "mrthn_createLead",
+			"url": "https://orgfarm-9a8fd84e2f-dev-ed.develop.my.salesforce.com/services/data/v64.0/sobjects/Lead/",
+			"time": 527,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				527
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "b279af59-d823-49d0-b8c1-3214cde8f2e2",
+			"name": "mrthn_getLeadDetails",
+			"url": "https://orgfarm-9a8fd84e2f-dev-ed.develop.my.salesforce.com/services/data/v64.0/sobjects/Lead/00QgK000007tFnBUAU",
+			"time": 345,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 & Details": true,
+				"Assert the Record Details": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 & Details": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Assert the Record Details": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				345
+			],
+			"allTests": [
+				{
+					"Status code is 200 & Details": true,
+					"Assert the Record Details": true
+				}
+			]
+		},
+		{
+			"id": "1766c34d-b13c-4041-b291-7a212c247147",
+			"name": "mrth_patchLead",
+			"url": "https://orgfarm-9a8fd84e2f-dev-ed.develop.my.salesforce.com/services/data/v64.0/sobjects/Lead/00QgK000007tFnBUAU",
+			"time": 491,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code is 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				491
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				}
+			]
+		},
+		{
+			"id": "3d6b7c7d-1405-439e-87df-c1fe50fd392a",
+			"name": "mrth_getLeadafterPatch",
+			"url": "https://orgfarm-9a8fd84e2f-dev-ed.develop.my.salesforce.com/services/data/v64.0/sobjects/Lead/00QgK000007tFnBUAU",
+			"time": 302,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Patch Confirmation": true
+			},
+			"testPassFailCounts": {
+				"Patch Confirmation": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				302
+			],
+			"allTests": [
+				{
+					"Patch Confirmation": true
+				}
+			]
+		},
+		{
+			"id": "f54b7cb7-6054-4fce-a4c1-279e0494c602",
+			"name": "mrthn_deleteLead",
+			"url": "https://orgfarm-9a8fd84e2f-dev-ed.develop.my.salesforce.com/services/data/v64.0/sobjects/Lead/00QgK000007tFnBUAU",
+			"time": 798,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code is 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				798
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 4443,
+	"collection": {
+		"requests": [
+			{
+				"id": "bb8f4c74-6726-4339-8e64-3cfa3830b339",
+				"method": "POST"
+			},
+			{
+				"id": "1965e289-04d7-4575-89ba-05149b6f7357",
+				"method": "POST"
+			},
+			{
+				"id": "b279af59-d823-49d0-b8c1-3214cde8f2e2",
+				"method": "GET"
+			},
+			{
+				"id": "1766c34d-b13c-4041-b291-7a212c247147",
+				"method": "PATCH"
+			},
+			{
+				"id": "3d6b7c7d-1405-439e-87df-c1fe50fd392a",
+				"method": "GET"
+			},
+			{
+				"id": "f54b7cb7-6054-4fce-a4c1-279e0494c602",
+				"method": "DELETE"
+			}
+		]
+	}
+}
