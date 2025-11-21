@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "50089993-adeb7b01-9eef-4881-a57d-ad31d14db101",
+		"name": "Siva_PlyWrgt_Marathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "S_Marathon_20Nov25",
+			"item": [
+				{
+					"name": "mrthn_createLead",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1819ef84-4dd0-4e4f-9639-f9f249191262",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"var resp=pm.response.json();\r",
+									"var stat = resp.success;\r",
+									"var rec_id=resp.id;\r",
+									"console.log(stat);\r",
+									"console.log(rec_id);\r",
+									"\r",
+									"pm.collectionVariables.set(\"record_id\", rec_id);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "15f0f351-3051-4c5e-9d47-5488c50dabfa",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "50089993-1965e289-04d7-4575-89ba-05149b6f7357",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sf_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Salutation\": \"Mr.\",\r\n    \"FirstName\": \"Mrthn_S_SF_FirstName1\",\r\n    \"LastName\": \"Mrthn_S_SF_LastName1\",\r\n    \"Company\": \"Mrthn_ABC Company1\",\r\n    \"Status\":\"Open - Not Contacted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{sf_instance_url}}/services/data/v64.0/sobjects/Lead/",
+							"host": [
+								"{{sf_instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v64.0",
+								"sobjects",
+								"Lead",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mrthn_createSFToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "338a81ea-7170-4b16-8e92-e43bbee49167",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var resp=pm.response.json();\r",
+									"var inst_url=resp.instance_url;\r",
+									"console.log(inst_url);\r",
+									"var tkn_type = resp.token_type;\r",
+									"var acc_token = resp.access_token;\r",
+									"\r",
+									"pm.collectionVariables.set(\"sf_instance_url\", inst_url);\r",
+									"pm.collectionVariables.set(\"sf_token_type\", tkn_type);\r",
+									"pm.collectionVariables.set(\"sf_access_token\", acc_token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2d7a1121-ceb9-433a-965a-603d5ffea4af",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "50089993-bb8f4c74-6726-4339-8e64-3cfa3830b339",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text",
+									"uuid": "6428568f-fa52-4dbb-8d6c-1b8f0d9cf2ac"
+								},
+								{
+									"key": "client_id",
+									"value": "3MVG9rZjd7MXFdLgPz6HBmQ35smkLEMk1.vCLVjBJJmDxq7RH1ffNT37_CiTeDJuWP7UeqtjArzNlXAKDNFXS",
+									"type": "text",
+									"uuid": "cd59f216-a5d3-4369-9784-38943d0089f5"
+								},
+								{
+									"key": "client_secret",
+									"value": "D203183E781546B2FBE1D606254827A3CFA54383B3EAB150C0E6FF393A772DCB",
+									"type": "text",
+									"uuid": "44cc74d7-820d-413b-a94b-cb4aa3ac6496"
+								},
+								{
+									"key": "username",
+									"value": "dsswar180@agentforce.com",
+									"type": "text",
+									"uuid": "f8ba3447-b984-4108-9657-73e4d930b373"
+								},
+								{
+									"key": "password",
+									"value": "PlayTest@4321fY2RUlpOIesQmHRh2fCeBLti",
+									"type": "text",
+									"uuid": "4f42f715-325f-4b59-ad73-5d5d68dafd47"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://login.salesforce.com/services/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"login",
+								"salesforce",
+								"com"
+							],
+							"path": [
+								"services",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mrthn_getLeadDetails",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e011556c-9bc3-43dd-be98-87a28f9ba004",
+								"exec": [
+									"pm.test(\"Status code is 200 & Details\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Assert the Record Details\",function(){\r",
+									"    var resp=pm.response.json();\r",
+									"    pm.expect(resp.LastName).to.include(\"Mrthn_S_SF_LastName1\");\r",
+									"    pm.expect(resp.FirstName).to.include(\"Mrthn_S_SF_FirstName1\");\r",
+									"    pm.expect(resp.Company).to.include(\"Mrthn_ABC Company1\");\r",
+									"    pm.expect(resp.Salutation).to.include(\"Mr.\");\r",
+									"    console.log(resp.LastName);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2308957c-0b03-4c3b-bae0-672d07453285",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "50089993-b279af59-d823-49d0-b8c1-3214cde8f2e2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sf_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sf_instance_url}}/services/data/v64.0/sobjects/Lead/{{record_id}}",
+							"host": [
+								"{{sf_instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v64.0",
+								"sobjects",
+								"Lead",
+								"{{record_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "50089993-b8f14e91-5c2c-4321-b5bb-e206cbd11f7a"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "522e9be1-fc5a-437a-8bcd-8e3835126181",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "62662218-ba7a-4c10-82a7-7406bfa269a2",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "sf_instance_url",
+			"value": ""
+		},
+		{
+			"key": "sf_token_type",
+			"value": ""
+		},
+		{
+			"key": "sf_access_token",
+			"value": ""
+		},
+		{
+			"key": "record_id",
+			"value": ""
+		}
+	]
+}
