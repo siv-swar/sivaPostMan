@@ -334,7 +334,7 @@
 								"exec": [
 									"pm.test(\"Your test name\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.;\r",
+									"    pm.expect(jsonData.LastName).to.eql(\"\");\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -345,7 +345,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "9ed1d740-7dfc-43a9-8601-39be38ca0eee",
+								"id": "810986d2-25a3-4b22-b399-61863b07c302",
 								"exec": [],
 								"type": "text/javascript"
 							}
