@@ -331,8 +331,32 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sf_access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{sf_instance_url}}/services/data/v64.0/sobjects/Lead/{{record_id}}",
+							"host": [
+								"{{sf_instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v64.0",
+								"sobjects",
+								"Lead",
+								"{{record_id}}"
+							]
+						}
 					},
 					"response": []
 				}
