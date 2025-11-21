@@ -388,7 +388,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "mrthn_deleteLead",
 					"event": [
 						{
 							"listen": "test",
@@ -396,7 +396,7 @@
 								"id": "5a0895f9-c1f6-4fac-a215-3686315b31e7",
 								"exec": [
 									"pm.test(\"Status code is 204\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.have.status(204);\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -407,7 +407,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "75b9748a-f7ab-47fd-82e7-bf7afb23f3df",
+								"id": "50c8e850-601a-4175-acc5-86ba59b6281c",
 								"exec": [],
 								"type": "text/javascript"
 							}
