@@ -257,6 +257,30 @@
 				},
 				{
 					"name": "mrth_patchLead",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "97f077d2-6d97-4ed7-8303-3cdb5cc81492",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "255c423d-cd1f-45aa-80eb-551cd224687e",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "50089993-1766c34d-b13c-4041-b291-7a212c247147",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
