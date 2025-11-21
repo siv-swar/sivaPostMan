@@ -198,8 +198,8 @@
 									"\r",
 									"pm.test(\"Assert the Record Details\",function(){\r",
 									"    var resp=pm.response.json();\r",
-									"    pm.expect(resp.LastName).to.include(\"Mrthn_S_SF_LN1\");\r",
-									"    pm.expect(resp.FirstName).to.include(\"Mrthn_S_SF_FN1\");\r",
+									"    pm.expect(resp.LastName).to.include(\"Mrthn_S_SF_LN_1\");\r",
+									"    pm.expect(resp.FirstName).to.include(\"Mrthn_S_SF_FN_1\");\r",
 									"    pm.expect(resp.Company).to.include(\"Mrthn_ABC Company1\");\r",
 									"    pm.expect(resp.Salutation).to.include(\"Hello\");\r",
 									"    console.log(resp.LastName);\r",
@@ -215,7 +215,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "7551a83f-c24e-47a6-9ba2-cac744f900ec",
+								"id": "ca137586-84c8-4731-9368-b38761dab729",
 								"exec": [],
 								"type": "text/javascript"
 							}
