@@ -334,8 +334,11 @@
 								"exec": [
 									"pm.test(\"Your test name\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.LastName).to.eql(\"\");\r",
-									"});"
+									"    pm.expect(jsonData.LastName).to.eql(\"Mrthn_S_SF_LN_1_Modified\");\r",
+									"    pm.expect(jsonData.Title).to.eql(\"Mr.\");\r",
+									"});\r",
+									"\"LastName\": \"Mrthn_S_SF_LN_1_Modified\",\r",
+									"    \"Title\": \"Mr.\""
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -345,7 +348,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "810986d2-25a3-4b22-b399-61863b07c302",
+								"id": "8b8895dc-7d05-49ea-b218-3656d03b3dc3",
 								"exec": [],
 								"type": "text/javascript"
 							}
