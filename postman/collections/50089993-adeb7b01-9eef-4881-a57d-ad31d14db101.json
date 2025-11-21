@@ -457,9 +457,6 @@
 								"exec": [
 									"pm.test(\"Delete Confirmation\", function () {\r",
 									"    pm.response..to.have.status(404);\r",
-									"    pm.test(\"Status code is 200\", function () {\r",
-									"        pm.response.to.have.status(200);\r",
-									"    });\r",
 									"});\r",
 									""
 								],
