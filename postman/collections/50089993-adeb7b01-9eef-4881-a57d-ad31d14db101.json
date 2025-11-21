@@ -455,7 +455,7 @@
 							"script": {
 								"id": "5be34575-3665-4ed7-93b7-43b463f85875",
 								"exec": [
-									"pm.test(\"Patch Confirmation\", function () {\r",
+									"pm.test(\"Delete Confirmation\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.LastName).to.eql(\"Mrthn_S_SF_LN_1_Modified\");\r",
 									"    pm.expect(jsonData.Title).to.eql(\"Mr.\");\r",
@@ -471,8 +471,12 @@
 							"listen": "prerequest",
 							"script": {
 								"id": "a4d22b3f-3fb4-4881-9c0b-3289a220ba34",
-								"exec": [],
-								"type": "text/javascript"
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
