@@ -448,7 +448,7 @@
 					"response": []
 				},
 				{
-					"name": "mrth_getLeadafterPatch Copy",
+					"name": "mrth_getLeadafterDelete",
 					"event": [
 						{
 							"listen": "test",
