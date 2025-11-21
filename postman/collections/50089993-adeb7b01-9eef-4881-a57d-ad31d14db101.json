@@ -388,6 +388,69 @@
 					"response": []
 				},
 				{
+					"name": "mrth_getLeadafterPatch Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5be34575-3665-4ed7-93b7-43b463f85875",
+								"exec": [
+									"pm.test(\"Patch Confirmation\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.LastName).to.eql(\"Mrthn_S_SF_LN_1_Modified\");\r",
+									"    pm.expect(jsonData.Title).to.eql(\"Mr.\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a4d22b3f-3fb4-4881-9c0b-3289a220ba34",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "50089993-463c09fa-9a0c-4345-aca1-949887eb5f05",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sf_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sf_instance_url}}/services/data/v64.0/sobjects/Lead/{{record_id}}",
+							"host": [
+								"{{sf_instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v64.0",
+								"sobjects",
+								"Lead",
+								"{{record_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "mrthn_deleteLead",
 					"event": [
 						{
