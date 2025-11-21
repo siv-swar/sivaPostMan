@@ -263,8 +263,8 @@
 							"script": {
 								"id": "97f077d2-6d97-4ed7-8303-3cdb5cc81492",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -275,7 +275,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "255c423d-cd1f-45aa-80eb-551cd224687e",
+								"id": "90fe91a6-b875-4867-a144-b9e6abb5f983",
 								"exec": [],
 								"type": "text/javascript"
 							}
