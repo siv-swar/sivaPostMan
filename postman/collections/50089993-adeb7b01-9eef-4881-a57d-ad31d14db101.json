@@ -201,7 +201,7 @@
 									"    pm.expect(resp.LastName).to.include(\"Mrthn_S_SF_LastName1\");\r",
 									"    pm.expect(resp.FirstName).to.include(\"Mrthn_S_SF_FirstName1\");\r",
 									"    pm.expect(resp.Company).to.include(\"Mrthn_ABC Company1\");\r",
-									"    pm.expect(resp.Salutation).to.include(\"Mr.\");\r",
+									"    pm.expect(resp.Salutation).to.include(\"Hello\");\r",
 									"    console.log(resp.LastName);\r",
 									"});\r",
 									"\r",
@@ -215,7 +215,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "2308957c-0b03-4c3b-bae0-672d07453285",
+								"id": "680a0907-f794-4e87-bfd8-520179793c74",
 								"exec": [],
 								"type": "text/javascript"
 							}
