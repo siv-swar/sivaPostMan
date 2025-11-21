@@ -388,6 +388,66 @@
 					"response": []
 				},
 				{
+					"name": "mrthn_deleteLead",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5a0895f9-c1f6-4fac-a215-3686315b31e7",
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "50c8e850-601a-4175-acc5-86ba59b6281c",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "50089993-f54b7cb7-6054-4fce-a4c1-279e0494c602",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sf_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{sf_instance_url}}/services/data/v64.0/sobjects/Lead/{{record_id}}",
+							"host": [
+								"{{sf_instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v64.0",
+								"sobjects",
+								"Lead",
+								"{{record_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "mrth_getLeadafterPatch Copy",
 					"event": [
 						{
@@ -432,66 +492,6 @@
 							]
 						},
 						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{sf_instance_url}}/services/data/v64.0/sobjects/Lead/{{record_id}}",
-							"host": [
-								"{{sf_instance_url}}"
-							],
-							"path": [
-								"services",
-								"data",
-								"v64.0",
-								"sobjects",
-								"Lead",
-								"{{record_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "mrthn_deleteLead",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "5a0895f9-c1f6-4fac-a215-3686315b31e7",
-								"exec": [
-									"pm.test(\"Status code is 204\", function () {\r",
-									"    pm.response.to.have.status(204);\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "50c8e850-601a-4175-acc5-86ba59b6281c",
-								"exec": [],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "50089993-f54b7cb7-6054-4fce-a4c1-279e0494c602",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{sf_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
 						"header": [],
 						"url": {
 							"raw": "{{sf_instance_url}}/services/data/v64.0/sobjects/Lead/{{record_id}}",
