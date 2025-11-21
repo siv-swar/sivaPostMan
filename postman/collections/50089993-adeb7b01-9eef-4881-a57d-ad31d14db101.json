@@ -456,7 +456,10 @@
 								"id": "5be34575-3665-4ed7-93b7-43b463f85875",
 								"exec": [
 									"pm.test(\"Delete Confirmation\", function () {\r",
-									"    pm.response.status(404);\r",
+									"    pm.response..to.have.status(404);\r",
+									"    pm.test(\"Status code is 200\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
 									"});\r",
 									""
 								],
