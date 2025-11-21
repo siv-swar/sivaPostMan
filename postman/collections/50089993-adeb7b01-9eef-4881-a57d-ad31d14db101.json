@@ -326,6 +326,31 @@
 				},
 				{
 					"name": "mrth_getLeadafterPatch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5be34575-3665-4ed7-93b7-43b463f85875",
+								"exec": [
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.;\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9ed1d740-7dfc-43a9-8601-39be38ca0eee",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "50089993-3d6b7c7d-1405-439e-87df-c1fe50fd392a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
