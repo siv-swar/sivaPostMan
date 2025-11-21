@@ -9,84 +9,6 @@
 			"name": "S_Marathon_20Nov25",
 			"item": [
 				{
-					"name": "mrthn_createLead",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "1819ef84-4dd0-4e4f-9639-f9f249191262",
-								"exec": [
-									"pm.test(\"Status code is 201\", function () {\r",
-									"    pm.response.to.have.status(201);\r",
-									"});\r",
-									"\r",
-									"var resp=pm.response.json();\r",
-									"var stat = resp.success;\r",
-									"var rec_id=resp.id;\r",
-									"console.log(stat);\r",
-									"console.log(rec_id);\r",
-									"\r",
-									"pm.collectionVariables.set(\"record_id\", rec_id);\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "15f0f351-3051-4c5e-9d47-5488c50dabfa",
-								"exec": [],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "50089993-1965e289-04d7-4575-89ba-05149b6f7357",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{sf_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"Salutation\": \"Hello\",\r\n    \"FirstName\": \"Mrthn_S_SF_FirstName1\",\r\n    \"LastName\": \"Mrthn_S_SF_LastName1\",\r\n    \"Company\": \"Mrthn_ABC Company1\",\r\n    \"Status\":\"Open - Not Contacted\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{sf_instance_url}}/services/data/v64.0/sobjects/Lead/",
-							"host": [
-								"{{sf_instance_url}}"
-							],
-							"path": [
-								"services",
-								"data",
-								"v64.0",
-								"sobjects",
-								"Lead",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "mrthn_createSFToken",
 					"event": [
 						{
@@ -179,6 +101,84 @@
 								"services",
 								"oauth2",
 								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mrthn_createLead",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1819ef84-4dd0-4e4f-9639-f9f249191262",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"var resp=pm.response.json();\r",
+									"var stat = resp.success;\r",
+									"var rec_id=resp.id;\r",
+									"console.log(stat);\r",
+									"console.log(rec_id);\r",
+									"\r",
+									"pm.collectionVariables.set(\"record_id\", rec_id);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "15f0f351-3051-4c5e-9d47-5488c50dabfa",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "50089993-1965e289-04d7-4575-89ba-05149b6f7357",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sf_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Salutation\": \"Hello\",\r\n    \"FirstName\": \"Mrthn_S_SF_FirstName1\",\r\n    \"LastName\": \"Mrthn_S_SF_LastName1\",\r\n    \"Company\": \"Mrthn_ABC Company1\",\r\n    \"Status\":\"Open - Not Contacted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{sf_instance_url}}/services/data/v64.0/sobjects/Lead/",
+							"host": [
+								"{{sf_instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v64.0",
+								"sobjects",
+								"Lead",
+								""
 							]
 						}
 					},
