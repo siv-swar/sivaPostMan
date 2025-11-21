@@ -262,8 +262,41 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sf_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{sf_instance_url}}/services/data/v64.0/sobjects/Lead/{{record_id}}",
+							"host": [
+								"{{sf_instance_url}}"
+							],
+							"path": [
+								"services",
+								"data",
+								"v64.0",
+								"sobjects",
+								"Lead",
+								"{{record_id}}"
+							]
+						}
 					},
 					"response": []
 				}
