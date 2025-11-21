@@ -160,7 +160,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Salutation\": \"Hello\",\r\n    \"FirstName\": \"Mrthn_S_SF_FirstName1\",\r\n    \"LastName\": \"Mrthn_S_SF_LastName1\",\r\n    \"Company\": \"Mrthn_ABC Company1\",\r\n    \"Status\":\"Open - Not Contacted\"\r\n}",
+							"raw": "{\r\n    \"Salutation\": \"Hello\",\r\n    \"FirstName\": \"Mrthn_S_SF_FN_1\",\r\n    \"LastName\": \"Mrthn_S_SF_LN_1\",\r\n    \"Company\": \"Mrthn_ABC Company1\",\r\n    \"Status\":\"Open - Not Contacted\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -198,8 +198,8 @@
 									"\r",
 									"pm.test(\"Assert the Record Details\",function(){\r",
 									"    var resp=pm.response.json();\r",
-									"    pm.expect(resp.LastName).to.include(\"Mrthn_S_SF_LastName1\");\r",
-									"    pm.expect(resp.FirstName).to.include(\"Mrthn_S_SF_FirstName1\");\r",
+									"    pm.expect(resp.LastName).to.include(\"Mrthn_S_SF_LN1\");\r",
+									"    pm.expect(resp.FirstName).to.include(\"Mrthn_S_SF_FN1\");\r",
 									"    pm.expect(resp.Company).to.include(\"Mrthn_ABC Company1\");\r",
 									"    pm.expect(resp.Salutation).to.include(\"Hello\");\r",
 									"    console.log(resp.LastName);\r",
@@ -215,7 +215,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "680a0907-f794-4e87-bfd8-520179793c74",
+								"id": "7551a83f-c24e-47a6-9ba2-cac744f900ec",
 								"exec": [],
 								"type": "text/javascript"
 							}
